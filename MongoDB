@@ -1,0 +1,107 @@
+Show All Databases :
+show dbs
+
+Create Collection :
+db.createCollection('posts')
+
+Update Row :
+db.posts.update({ title: 'Post Two' },
+{
+  title: 'Post Two',
+  body: 'New body for post 2',
+  date: Date()
+},
+{
+  upsert: true
+})
+
+Operator	Description	Commands :
+
+$gt 	greater than 	db.docx.find({class:{$gt:'T'}
+$gte 	greater than equals	db.docx.find({class:{$gt:'T'}
+$lt 	lesser than 	db.docx.find({class:{$lt:'T'}
+$lte	lesser than equals	db.docx.find({class:{$lte:'T'}
+$exists	does an attribute exist or not	db.docx.find({class:{$gt:'T'}
+$regex	Matching pattern in pearl-style	db.docx.find({name:{$regex:'^USS\\sE'}})
+$type 	search by type of an element	db.docx.find({name : {$type:4}})
+
+Operator	Description	Command :
+
+$sum 	Sum up values 	db.docx.aggregate([{$group : {_id : "$operator", num_docx : {$sum : "$value"}}}])
+$avg	Calculates average values	db.docx.aggregate([{$group : {_id : "$operator", num_docx : {$avg : "$value"}}}]) 
+$min / $max	Find min/max values	db.docx.aggregate([{$group : {_id : "$operator", num_docx : {$min : "$value"}}}])
+$push 	Push values to a result array 	db.docx.aggregate([{$group : {_id : "$operator", classes : {$push: "$value"}}}])
+$addToSet 	Push values to a result array without duplicates 	db.docx.aggregate([{$group : {_id : "$operator", classes : {$addToSet : "$value"}}}]) 
+$first / $last 	To get the first / last document 	db.docx.aggregate([{$group : {_id : "$operator", last_class : {$last : "$value"}}}])
+
+Search in a MongoDb Database: 
+db.comments.find({lang:'Python'})
+
+Showing All Collections in a Database: 
+db.getCollectionNames()
+
+Listing a Collection’s Records: 
+db.collectionname.find()
+
+Listing Records with Matching Values of Specific Fields: 
+db. collectionname.find({"field2": "secondmatching value"})
+
+Multiple Matching Values:
+db. collectionname.find({"field2": "second matching value", "field3": "thirdmatchingvalue"})
+
+Finding a Single Record:
+db. collectionname.findOne({"field2": "content"})
+
+Interview Questions :
+
+What type of NoSQL database MongoDB is?
+
+MongoDB is a document-oriented database. It stores the data in the form of the BSON structure-oriented databases. We store these documents in a collection.
+
+Why do we use the pretty() method?
+
+We use the pretty() method for displaying the results in a formatted way.
+
+What are the points we should consider while creating a schema in MongoDB?
+
+We must consider the following points while creating a schema:
+
+Designing the Scheme based on the user requirements.
+Combining the objects into one document, if we have to use them jointly, or else, separate them.
+Perform joins while on write, and not while it is reading.
+For most general application scenarios, maximize the schema.
+Perform complex aggregations in the schema.
+
+What are the CRUD operations of MongoDB?
+
+Following are the CRUD operations of MongoDB:
+
+Create-db.collection.insert();
+
+Read-db.collection.find();
+
+Update-db.collection.update();
+
+Delete-db.collection.remove();
+
+What is “Namespace” in MongoDB?
+
+The concatenation of the collection name and database name is called a namespace.
+
+What is sharding in MongoDB?
+
+The procedure of storing data records across multiple machines is referred as sharding. 
+
+What are NoSQL databases? What are the different types of NoSQL databases?
+  
+Answer
+
+A NoSQL database provides a mechanism for storage and retrieval of data that is modeled in means other than the tabular relations used in relational databases (like SQL, Oracle, etc.).
+
+Types of NoSQL databases:
+
+Document Oriented
+Key Value
+Graph
+Column Oriented
+
