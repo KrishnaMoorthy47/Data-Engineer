@@ -1,0 +1,143 @@
+SQL
+DDL Data Definition Language
+Before Storing the Data in Database to Define the Structure of the table
+
+Create
+
+Drop
+
+Alter
+
+Truncate
+
+DML Data Manipulation Language
+Defining the Structure in Data
+
+Insert
+
+Update
+
+Delete
+
+DQL Data Query Language
+It is like analysis part like want to add or select etc.
+
+Select
+Execution Order
+From
+
+Where
+
+group by
+
+Having
+
+Select
+
+Order by
+
+Top / Limit
+
+--> Select means Selecting the columns from dataset If we want specific column Select column name
+
+--> * means all columns
+
+--> from means from
+
+--> order is a command in SQL so [] is used in case if order is present in data
+
+--> If we want to count number of data select count(*)
+
+--> If want to give new column name i.e for groupby etc select city,count(*) as customer_count
+
+--> between command is used for between For example : year between year1 and year 2
+
+--> or function can used when there is 2 (or) can use where city in ('chennai','Bangalore')
+
+--> Like command can used if want some data starting from the letter For Example : where lastname like '%name' or 'name%' % in front means ending with and % in last means starting with the name
+
+--> For Concatenation select name 1 + ' ' + name2 as newcolumnname
+
+--> count(distinct column name) for no duplicates counts
+
+--> After groupby command having command can be given if we want something above or below
+
+--> Having is used to aggregate the count while where is used to when filtering in dataset
+
+--> lag 2 is used to find the last transaction
+
+--> ntile will split into parts based on values
+
+#To find top 10 customer
+
+#select top 10 customerid, count(distinct ordernumber) as transaction_count
+#from [order]
+#group by customerid
+#ORDER BY transaction_count                       (asc for ascending or desc for descending)
+
+#To find avg of top 5
+
+#select top 5 customerid, avg(totalamount) as avg_A_count 
+#from [order]
+#group by customerid
+#ORDER BY avg_A_count desc
+
+#To avoid duplicates
+
+#from (select distinct * from [order]) new_table
+
+#-- find the highest selling productid wrt quantity
+
+#select top 1 productid, sum(quantity) as total_quantity 
+#from Orderitem
+#group BY productid
+#ORDER BY total_quantity desc
+
+#-- Show all orders made by certain people from certain place
+
+#select o.* , c.firstname, c.lastname  
+#from [order] as o   #as o is for our convenience
+#left join customer as c
+# on o.customerid = c.id
+
+#-- Find all the products by 1 person
+
+#select distinct oi.productid,o.customerid,c.firstname,c.lastname
+#from orderitem as oi
+#left join [order] as o
+#on o.id = oi.orderid 
+
+#left join Customer as c
+#on c.id = o.customerid
+#where firstname = 'dupa' and lastname ='Anders'
+
+
+#Another method
+
+#select distince oi.productid,o.customerid,c.firstname,c.lastname
+#from orderitem as oi
+#inner join (select * from [order] where customerid in (select id from customer where firstname = 'dupa' and lastname ='anders')) as o
+#on o.id = oi.orderid
+
+#where customer
+
+#select *
+#rank() over (partition by customerid order by orderdate asc) as transaction_rank
+#from [order]
+
+#if we want sum
+#sum(totalamount) over (partition by customerid order by orderdate asc ) as cumsum_customer
+
+#if want last transaction
+#lag(totalamount,2) over (partition by customerid order by orderdate asc) as lag_2
+
+#same for lead
+
+#if else 
+
+#select*,
+#case
+#when totalamount <=1000 then 'low'
+#when totalamount between 1000 and 5000 then 'medium'
+#else 'high' end as 'transaction_type'
+#from [order]
