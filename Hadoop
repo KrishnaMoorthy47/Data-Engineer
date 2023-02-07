@@ -1,0 +1,37 @@
+HDFS stands for Hadoop Distributed File System and stores all of the data of Hadoop. Being a distributed file system, it has a high bandwidth and preserves the quality of data.
+MapReduce processes large volumes of data.
+Hadoop Common is a group of libraries and functions you can utilize in Hadoop.
+YARN (Yet Another Resource Negotiator)deals with the allocation and management of resources in Hadoop. 
+
+Can you tell me about NameNode? What happens if NameNode crashes or comes to an end?
+
+It is the centre-piece or central node of the Hadoop Distributed File System(HDFS), and it does not store actual data. It stores metadata. For example, the data being stored in DataNodes on which rack and which DataNode the information is stored. It tracks the different files present in clusters. Generally, there is one NameNode, so when it crashes, the system may not be available.
+
+What happens when Block Scanner detects a corrupted data block?
+
+Firstly, DataNode reports the corrupted block to NameNode.NameNode makes a replica using an existing model. If the system does not delete the corrupted data block, NameNode creates replicas as per the replication factor. 
+
+What is a block and block scanner in HDFS?
+
+Block: In HDFS, a "block" refers to the smallest amount of data that may be read or written. 
+
+Block Scanner: Block Scanner keeps track of the list of blocks on a DataNode and checks them for checksum problems. To save disc bandwidth on the data node, Block Scanners use a throttling technique.
+
+Explain the main methods of reducer.
+
+These are the main methods of reducer:
+
+setup(): This command is used to specify parameters such as the size of input data and the distributed cache.
+cleaning(): is a function for deleting temporary files.
+reduce(): it's called once per key with the corresponding reduced task
+
+STAR SCHEMA:
+
+In a data warehouse, a star schema can include one fact table and a number of associated dimension tables in the center. It's called a star schema because its structure resembles that of a star. The simplest sort of Data Warehouse schema is the Star Schema data model. It is also known as the Star Join Schema, and it is designed for massive data sets
+
+SNOWFLAKE SCHEMA:
+
+A snowflake schema is a logical arrangement of tables in a multidimensional database that matches the snowflake shape (in the ER diagram).  A Snowflake Schema is an enlarged Star Schema with additional dimensions. After the dimension tables have been normalized, the data is separated into new tables. 
+
+There are two messages which NameNode gets from DataNode. They are 1) Block report and 2) Heartbeat.
+
