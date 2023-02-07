@@ -1,0 +1,26 @@
+Data Engineering enables data-driven decision making by collecting,transforming and visualizing the data.
+A Data Engineer designs,builds and maintain and troubleshoots data processing systems.
+A Data Engineer also analyses data to gain insight into business outcomes,builds statistical models to support decision making and creates ML models to automate and simplify business process.
+Data engineering is all about designing, developing, testing and delivering offerings using leading edge and/or proven technologies.
+As a data engineer, you’re in charge of gathering and collecting the data, storing it, do batch processing or real-time processing on it, and serve it via an API to data scientist who can easily query it. 
+Hadoop is open source distributed processing framework that manages data processing and storage for big data applications.
+ETL, which stands for extract, transform and load, is a data integration process that combines data from multiple data sources into a single, consistent data store that is loaded into a data warehouse or other target system.
+An API is a set of defined rules that explain how computers or applications communicate with one another. APIs sit between an application and the web server, acting as an intermediary layer that processes data transfer between systems
+What is data modeling?
+Data modeling is the process that defines and analyzes the data requirements needed to support business requirements converting these into a system with data and organized.
+Star schema has a fact table that has several associated dimension tables, so it looks like a star and is the simplest type of data warehouse schema. 
+Snowflake schema is an extension of a star schema and adds additional dimension tables that split the data up, flowing out like a snowflake’s spokes.
+The four Vs are volume, velocity, variety, and veracity.
+Star Schema	Snowflake Schema
+The dimension hierarchy is stored in dimension tables.	Each hierarchy gets stored in individual tables.
+High data redundancy	Low data redundancy
+Simple database designs	Complex data-handling storage space
+Fast cube processing	Slower cube processing (complex joins)
+A Data Engineer is responsible for a wide array of things :
+Handling data inflow and processing pipelines
+Maintaining data staging areas
+Responsible for ETL data transformation activities
+Performing data cleaning and the removal of redundancies
+Creating ad-hoc query building operations and native data extraction methods
+*args defines an ordered function
+**kwargs represent unordered arguments used in a function. 
