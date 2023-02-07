@@ -1,4 +1,5 @@
-HDFS stands for Hadoop Distributed File System and stores all of the data of Hadoop. Being a distributed file system, it has a high bandwidth and preserves the quality of data.
+# HDFS
+**HDFS** stands for Hadoop Distributed File System and stores all of the data of Hadoop. Being a distributed file system, it has a high bandwidth and preserves the quality of data.
 MapReduce processes large volumes of data.
 Hadoop Common is a group of libraries and functions you can utilize in Hadoop.
 YARN (Yet Another Resource Negotiator)deals with the allocation and management of resources in Hadoop. 
