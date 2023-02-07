@@ -3,7 +3,7 @@ MapReduce processes large volumes of data.
 Hadoop Common is a group of libraries and functions you can utilize in Hadoop.
 YARN (Yet Another Resource Negotiator)deals with the allocation and management of resources in Hadoop. 
 
-Can you tell me about NameNode? What happens if NameNode crashes or comes to an end?
+Can you tell me about **NameNode**? What happens if NameNode crashes or comes to an end?
 
 It is the centre-piece or central node of the Hadoop Distributed File System(HDFS), and it does not store actual data. It stores metadata. For example, the data being stored in DataNodes on which rack and which DataNode the information is stored. It tracks the different files present in clusters. Generally, there is one NameNode, so when it crashes, the system may not be available.
 
